@@ -3,125 +3,336 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prociber | Soluções Avançadas em Cibersegurança</title>
-  <!-- Tailwind CSS via CDN -->
+  <meta name="description" content="Prociber Segurança Digital: backup em nuvem, proteção de dados, monitoramento e segurança para sua empresa." />
+  <title>Prociber | Segurança Digital e Backup em Nuvem</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Fonte Inter do Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
+    html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; }
+    .grid-bg {
+      background-image: linear-gradient(rgba(34,211,238,.055) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(34,211,238,.055) 1px, transparent 1px);
+      background-size: 42px 42px;
+    }
+    .glow { box-shadow: 0 0 80px rgba(34,211,238,.10); }
+    .card { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .card:hover { transform: translateY(-5px); border-color: rgba(34,211,238,.45); box-shadow: 0 20px 50px rgba(0,0,0,.22); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
 
-  <!-- Header / Navegação -->
-  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <div class="flex items-center space-x-2">
-        <span class="text-2xl font-extrabold tracking-wider text-white">
-          PRO<span class="text-cyan-400">CIBER</span>
-        </span>
-      </div>
-      <div>
-        <a href="#falar-com-especialista" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-all shadow-lg shadow-cyan-500/20">
-          Falar com Especialista
-        </a>
-      </div>
+<body class="bg-slate-950 text-slate-100 antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-xl">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="#" class="text-2xl font-black tracking-widest text-white">
+        PRO<span class="text-cyan-400">CIBER</span>
+      </a>
+
+      <nav class="hidden items-center gap-7 text-sm text-slate-300 md:flex">
+        <a href="#solucoes" class="hover:text-cyan-400 transition">Soluções</a>
+        <a href="#segmentos" class="hover:text-cyan-400 transition">Segmentos</a>
+        <a href="#sobre" class="hover:text-cyan-400 transition">Sobre a Prociber</a>
+      </nav>
+
+      <a href="#contato" class="rounded-lg bg-cyan-400 px-4 py-2.5 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/20 hover:bg-cyan-300 transition">
+        Falar com especialista
+      </a>
     </div>
   </header>
 
-  <!-- Hero Section + Formulário -->
-  <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- Hero -->
+  <section class="relative overflow-hidden grid-bg">
+    <div class="absolute left-1/2 top-0 h-[650px] w-[650px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Mensagem principal -->
-        <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center space-x-2 bg-slate-900 border border-slate-800 rounded-full px-4 py-1.5 text-xs text-cyan-400 font-medium">
-            <span class="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            <span>Segurança da Informação e Conformidade LGPD</span>
-          </div>
-
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Proteja sua empresa contra <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">vazamentos e ataques digitais</span>
-          </h1>
-
-          <p class="text-lg text-slate-400 max-w-2xl leading-relaxed">
-            Diagnóstico completo de vulnerabilidades, adequação LGPD e monitoramento contínuo para manter sua operação segura e em conformidade.
-          </p>
-
-          <ul class="space-y-3 pt-2 text-slate-300">
-            <li class="flex items-center space-x-3">
-              <svg class="w-5 h-5 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              <span>Análise contínua de brechas de segurança na sua infraestrutura</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <svg class="w-5 h-5 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              <span>Conformidade com LGPD e frameworks internacionais (ISO 27001, CIS)</span>
-            </li>
-            <li class="flex items-center space-x-3">
-              <svg class="w-5 h-5 text-cyan-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              <span>Suporte especializado e relatórios executivos para tomada de decisão</span>
-            </li>
-          </ul>
+    <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-4 py-20 sm:px-6 lg:grid-cols-12 lg:px-8 lg:py-28">
+      <div class="lg:col-span-7 reveal">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-xs font-semibold text-cyan-300">
+          <span class="h-2 w-2 animate-pulse rounded-full bg-cyan-400"></span>
+          Segurança Digital • Backup • Continuidade
         </div>
 
-        <!-- Formulário com envio JS -->
-        <div class="lg:col-span-5" id="falar-com-especialista">
-          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
-            <h2 class="text-2xl font-bold text-white mb-2">Solicitar Diagnóstico</h2>
-            <p class="text-sm text-slate-400 mb-6">Receba uma avaliação inicial das vulnerabilidades da sua empresa sem custo.</p>
+        <h1 class="max-w-4xl text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+          Seus dados são valiosos demais para
+          <span class="bg-gradient-to-r from-cyan-300 to-blue-500 bg-clip-text text-transparent">ficarem desprotegidos.</span>
+        </h1>
 
-            <form id="leadForm" class="space-y-4">
-              <div>
-                <label for="nome" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Nome Completo</label>
-                <input type="text" id="nome" name="nome" required placeholder="Seu nome" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all text-sm" />
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
+          Proteja os dados da sua empresa contra perdas, falhas, ataques e imprevistos.
+          A Prociber combina tecnologia, monitoramento e experiência para ajudar sua operação a continuar funcionando.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="#solucoes" class="rounded-lg bg-cyan-400 px-6 py-3.5 text-center font-bold text-slate-950 hover:bg-cyan-300 transition">
+            Conheça nossas soluções
+          </a>
+          <a href="#contato" class="rounded-lg border border-slate-700 bg-slate-900/70 px-6 py-3.5 text-center font-bold text-white hover:border-cyan-400 hover:text-cyan-300 transition">
+            Falar com um especialista
+          </a>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-400">
+          <span>✓ Proteção contra perda de dados</span>
+          <span>✓ Monitoramento</span>
+          <span>✓ Segurança contra ataques</span>
+        </div>
+      </div>
+
+      <!-- Hero visual -->
+      <div class="lg:col-span-5 reveal">
+        <div class="glow rounded-3xl border border-slate-800 bg-slate-900/80 p-6 backdrop-blur">
+          <div class="mb-5 flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-slate-500">Prociber Security</p>
+              <p class="mt-1 text-xl font-bold">Proteção ativa</p>
+            </div>
+            <div class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-bold text-emerald-400">● ONLINE</div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-4">
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-slate-300">Backup</span>
+                <span class="text-sm font-bold text-emerald-400">Protegido</span>
               </div>
-
-              <div>
-                <label for="email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">E-mail Corporativo</label>
-                <input type="email" id="email" name="email" required placeholder="seu.nome@suaempresa.com.br" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all text-sm" />
+              <div class="mt-3 h-2 overflow-hidden rounded-full bg-slate-800">
+                <div class="h-full w-[94%] rounded-full bg-cyan-400"></div>
               </div>
+            </div>
 
-              <div>
-                <label for="telefone" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">WhatsApp / Telefone</label>
-                <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all text-sm" />
+            <div class="grid grid-cols-2 gap-3">
+              <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-4">
+                <p class="text-2xl font-black text-white">500+</p>
+                <p class="mt-1 text-xs text-slate-500">clientes seguros</p>
               </div>
-
-              <div>
-                <label for="empresa" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Nome da Empresa</label>
-                <input type="text" id="empresa" name="empresa" placeholder="Sua empresa" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all text-sm" />
+              <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-4">
+                <p class="text-2xl font-black text-white">50+ TB</p>
+                <p class="mt-1 text-xs text-slate-500">dados protegidos</p>
               </div>
+            </div>
 
-              <button type="submit" id="submitBtn" class="w-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold py-3.5 px-4 rounded-lg transition-all shadow-lg shadow-cyan-500/20 text-center text-sm mt-2">
-                Quero Proteger Minha Empresa
-              </button>
-
-              <div id="formFeedback" class="hidden text-center text-sm p-3 rounded-lg mt-2"></div>
-
-              <p class="text-xs text-slate-500 text-center mt-3">
-                🔒 Seus dados estão seguros. Respeitamos a LGPD.
+            <div class="rounded-xl border border-cyan-400/20 bg-cyan-400/5 p-4">
+              <p class="text-sm font-semibold text-cyan-300">✓ Monitoramento contínuo</p>
+              <p class="mt-1 text-xs leading-relaxed text-slate-400">
+                Acompanhe a saúde dos seus backups e reduza o risco de descobrir um problema somente quando precisar restaurar seus dados.
               </p>
-            </form>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Rodapé -->
-  <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p>© Prociber. Todos os direitos reservados.</p>
+  <!-- Numbers -->
+  <section id="sobre" class="border-y border-slate-800 bg-slate-900/50">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div class="mb-8 text-center reveal">
+        <p class="text-sm font-bold uppercase tracking-[.25em] text-cyan-400">Experiência que protege</p>
+        <h2 class="mt-2 text-2xl font-bold sm:text-3xl">Segurança construída com experiência</h2>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div class="text-center reveal"><p class="text-4xl font-black text-white">10+</p><p class="mt-2 text-sm text-slate-500">anos de experiência</p></div>
+        <div class="text-center reveal"><p class="text-4xl font-black text-white">500+</p><p class="mt-2 text-sm text-slate-500">clientes seguros</p></div>
+        <div class="text-center reveal"><p class="text-4xl font-black text-white">500</p><p class="mt-2 text-sm text-slate-500">dispositivos protegidos</p></div>
+        <div class="text-center reveal"><p class="text-4xl font-black text-white">50+ TB</p><p class="mt-2 text-sm text-slate-500">de dados protegidos</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+      <div class="reveal">
+        <p class="text-sm font-bold uppercase tracking-[.25em] text-cyan-400">Não espere acontecer</p>
+        <h2 class="mt-3 text-3xl font-black leading-tight sm:text-4xl">
+          O que aconteceria se sua empresa perdesse os dados hoje?
+        </h2>
+        <p class="mt-5 leading-relaxed text-slate-400">
+          Uma falha de hardware, exclusão acidental, vírus ou ataque pode interromper uma operação inteira.
+          Ter uma estratégia de proteção ajuda sua empresa a reduzir riscos e recuperar informações quando necessário.
+        </p>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-2 reveal">
+        <div class="rounded-xl border border-slate-800 bg-slate-900 p-5"><span class="text-2xl">💾</span><p class="mt-3 font-bold">Perda de arquivos</p><p class="mt-1 text-sm text-slate-500">Documentos e informações importantes fora do alcance.</p></div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900 p-5"><span class="text-2xl">🦠</span><p class="mt-3 font-bold">Vírus e malware</p><p class="mt-1 text-sm text-slate-500">Ameaças que podem comprometer sua operação.</p></div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900 p-5"><span class="text-2xl">⚡</span><p class="mt-3 font-bold">Falhas e acidentes</p><p class="mt-1 text-sm text-slate-500">Problemas de hardware, energia ou infraestrutura.</p></div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900 p-5"><span class="text-2xl">🔐</span><p class="mt-3 font-bold">Ataques digitais</p><p class="mt-1 text-sm text-slate-500">Riscos como phishing, ransomware e invasões.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solucoes" class="bg-slate-900/60 py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl reveal">
+        <p class="text-sm font-bold uppercase tracking-[.25em] text-cyan-400">Nossas soluções</p>
+        <h2 class="mt-3 text-3xl font-black sm:text-4xl">Uma estrutura de proteção para o seu negócio</h2>
+        <p class="mt-4 text-slate-400">Tecnologia para proteger dados, apoiar seu time e aumentar a continuidade da operação.</p>
+      </div>
+
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div class="card rounded-2xl border border-slate-800 bg-slate-950 p-7 reveal">
+          <div class="text-3xl">☁️</div><h3 class="mt-5 text-xl font-bold">Backup em Nuvem</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">Armazene seus arquivos com segurança e tenha uma camada adicional de proteção para as informações da empresa.</p>
+        </div>
+        <div class="card rounded-2xl border border-slate-800 bg-slate-950 p-7 reveal">
+          <div class="text-3xl">🛡️</div><h3 class="mt-5 text-xl font-bold">Segurança Digital</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">Proteção dos ativos da empresa e apoio na prevenção de ameaças cibernéticas.</p>
+        </div>
+        <div class="card rounded-2xl border border-slate-800 bg-slate-950 p-7 reveal">
+          <div class="text-3xl">📡</div><h3 class="mt-5 text-xl font-bold">Monitoramento</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">Monitoramento dos backups e estações para identificar problemas antes que eles se tornem críticos.</p>
+        </div>
+        <div class="card rounded-2xl border border-slate-800 bg-slate-950 p-7 reveal">
+          <div class="text-3xl">🗄️</div><h3 class="mt-5 text-xl font-bold">Backup de Bancos de Dados</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">Proteção para informações essenciais ao funcionamento dos sistemas da sua empresa.</p>
+        </div>
+        <div class="card rounded-2xl border border-slate-800 bg-slate-950 p-7 reveal">
+          <div class="text-3xl">🖥️</div><h3 class="mt-5 text-xl font-bold">Backup de Máquinas Virtuais</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">Uma camada de segurança para ambientes virtualizados e operações de TI.</p>
+        </div>
+        <div class="card rounded-2xl border border-slate-800 bg-slate-950 p-7 reveal">
+          <div class="text-3xl">🔄</div><h3 class="mt-5 text-xl font-bold">Recuperação</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">Esteja preparado para restaurar informações e retomar a operação diante de imprevistos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Segments -->
+  <section id="segmentos" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <div class="text-center reveal">
+      <p class="text-sm font-bold uppercase tracking-[.25em] text-cyan-400">Onde atuamos</p>
+      <h2 class="mt-3 text-3xl font-black sm:text-4xl">Soluções para diferentes tipos de operação</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-slate-400">Cada negócio possui dados, riscos e necessidades diferentes. A Prociber atende empresas de diferentes segmentos.</p>
+    </div>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <div class="card rounded-2xl border border-slate-800 bg-slate-900 p-6 text-center reveal"><div class="text-3xl">⚖️</div><h3 class="mt-4 font-bold">Jurídico</h3><p class="mt-2 text-xs text-slate-500">Proteção de informações sensíveis e documentos.</p></div>
+      <div class="card rounded-2xl border border-slate-800 bg-slate-900 p-6 text-center reveal"><div class="text-3xl">💰</div><h3 class="mt-4 font-bold">Financeiro</h3><p class="mt-2 text-xs text-slate-500">Segurança para dados bancários e operações.</p></div>
+      <div class="card rounded-2xl border border-slate-800 bg-slate-900 p-6 text-center reveal"><div class="text-3xl">📊</div><h3 class="mt-4 font-bold">Contábil</h3><p class="mt-2 text-xs text-slate-500">Arquivos fiscais, contratos e documentos protegidos.</p></div>
+      <div class="card rounded-2xl border border-slate-800 bg-slate-900 p-6 text-center reveal"><div class="text-3xl">💻</div><h3 class="mt-4 font-bold">TI</h3><p class="mt-2 text-xs text-slate-500">Apoio, bancos de dados e máquinas virtuais.</p></div>
+      <div class="card rounded-2xl border border-slate-800 bg-slate-900 p-6 text-center reveal"><div class="text-3xl">🛒</div><h3 class="mt-4 font-bold">Comércio</h3><p class="mt-2 text-xs text-slate-500">Monitoramento para uma operação que não pode parar.</p></div>
+    </div>
+  </section>
+
+  <!-- LGPD / Trust -->
+  <section class="border-y border-slate-800 bg-slate-900/60 py-20">
+    <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <div class="reveal">
+        <p class="text-sm font-bold uppercase tracking-[.25em] text-cyan-400">Proteção e conformidade</p>
+        <h2 class="mt-3 text-3xl font-black sm:text-4xl">Segurança também é proteger a confiança dos seus clientes.</h2>
+        <p class="mt-5 leading-relaxed text-slate-400">
+          A proteção de dados vai além da tecnologia. Empresas precisam cuidar das informações que armazenam,
+          reduzir riscos e adotar medidas adequadas de segurança.
+        </p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2 reveal">
+        <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="font-bold">Proteção contra perda de dados</h3><p class="mt-2 text-sm text-slate-500">Reduza o impacto de falhas e incidentes.</p></div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="font-bold">Segurança contra ataques</h3><p class="mt-2 text-sm text-slate-500">Previna ameaças e proteja seus ativos.</p></div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="font-bold">Conformidade</h3><p class="mt-2 text-sm text-slate-500">Apoio à proteção e tratamento responsável dos dados.</p></div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6"><h3 class="font-bold">Proteção da imagem</h3><p class="mt-2 text-sm text-slate-500">Preserve a confiança construída com seus clientes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative overflow-hidden py-20">
+    <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-blue-500/10"></div>
+    <div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
+      <p class="text-sm font-bold uppercase tracking-[.25em] text-cyan-400 reveal">Sua empresa não pode parar</p>
+      <h2 class="mt-4 text-3xl font-black sm:text-5xl reveal">A defesa que você precisa. A segurança que você merece.</h2>
+      <p class="mx-auto mt-5 max-w-2xl leading-relaxed text-slate-400 reveal">
+        Converse com um especialista da Prociber e descubra como proteger melhor os dados da sua empresa.
+      </p>
+      <a href="#contato" class="mt-8 inline-flex rounded-lg bg-cyan-400 px-7 py-4 font-black text-slate-950 shadow-xl shadow-cyan-500/20 hover:bg-cyan-300 transition reveal">
+        Quero proteger minha empresa
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contato" class="bg-slate-900/70 py-20">
+    <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <div class="reveal">
+        <p class="text-sm font-bold uppercase tracking-[.25em] text-cyan-400">Fale com a Prociber</p>
+        <h2 class="mt-3 text-3xl font-black sm:text-4xl">Vamos conversar sobre a segurança da sua empresa?</h2>
+        <p class="mt-5 leading-relaxed text-slate-400">
+          Preencha seus dados e nossa equipe comercial entrará em contato para entender sua necessidade.
+        </p>
+
+        <div class="mt-8 space-y-4 text-sm text-slate-300">
+          <p>📍 Rua Antonina, 1174 — Centro, Cascavel - PR</p>
+          <p>📞 <a class="hover:text-cyan-400" href="tel:+554531972328">(45) 3197-2328</a></p>
+          <p>✉️ <a class="hover:text-cyan-400" href="mailto:comercial@prociber.com.br">comercial@prociber.com.br</a></p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-slate-800 bg-slate-950 p-6 shadow-2xl sm:p-8 reveal">
+        <h3 class="text-2xl font-bold">Solicite uma conversa</h3>
+        <p class="mt-2 text-sm text-slate-500">Sem compromisso. Vamos entender o cenário da sua empresa.</p>
+
+        <form id="leadForm" class="mt-6 space-y-4">
+          <div>
+            <label for="nome" class="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-400">Nome completo</label>
+            <input type="text" id="nome" name="nome" required placeholder="Seu nome" class="w-full rounded-lg border border-slate-800 bg-slate-900 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:border-cyan-400" />
+          </div>
+
+          <div>
+            <label for="email" class="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-400">E-mail corporativo</label>
+            <input type="email" id="email" name="email" required placeholder="seu.nome@suaempresa.com.br" class="w-full rounded-lg border border-slate-800 bg-slate-900 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:border-cyan-400" />
+          </div>
+
+          <div>
+            <label for="telefone" class="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-400">WhatsApp / Telefone</label>
+            <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000" class="w-full rounded-lg border border-slate-800 bg-slate-900 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:border-cyan-400" />
+          </div>
+
+          <div>
+            <label for="empresa" class="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-400">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" class="w-full rounded-lg border border-slate-800 bg-slate-900 px-4 py-3 text-sm text-white placeholder-slate-600 outline-none transition focus:border-cyan-400" />
+          </div>
+
+          <button type="submit" id="submitBtn" class="w-full rounded-lg bg-cyan-400 px-4 py-3.5 text-sm font-black text-slate-950 shadow-lg shadow-cyan-500/20 hover:bg-cyan-300 transition">
+            Quero falar com um especialista
+          </button>
+
+          <div id="formFeedback" class="hidden rounded-lg p-3 text-center text-sm"></div>
+          <p class="text-center text-xs text-slate-600">🔒 Seus dados são tratados com respeito à LGPD.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950">
+    <div class="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-8 text-sm text-slate-500 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+      <div>
+        <p class="font-bold tracking-widest text-white">PRO<span class="text-cyan-400">CIBER</span></p>
+        <p class="mt-1">Segurança Digital</p>
+      </div>
+      <div class="text-left md:text-right">
+        <p>PRO CIBER SEGURANCA DIGITAL • CNPJ 45.656.922/0001-90</p>
+        <p class="mt-1">© 2026 Prociber. Todos os direitos reservados.</p>
+        <a href="https://www.prociber.com.br/politica" target="_blank" class="mt-1 inline-block hover:text-cyan-400">Política de Privacidade</a>
+      </div>
     </div>
   </footer>
 
-  <!-- Script para integração com o Google Sheets -->
+  <!-- WhatsApp -->
+  <a href="https://wa.me/554531972328" target="_blank" aria-label="Falar com a Prociber pelo WhatsApp"
+     class="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-2xl shadow-2xl shadow-emerald-900/40 hover:scale-105 transition">
+    💬
+  </a>
+
   <script>
-    // COLE O URL DO SEU GOOGLE APPS SCRIPT AQUI ABAIXO
     const scriptURL = 'https://script.google.com/macros/s/AKfycbx3umpS7AXGrWObRoepFVjH-znFnBSEvHTkecX65P1nGTm8Qdnu3KBVQsAfZ0RNzYax/exec';
 
     const form = document.getElementById('leadForm');
@@ -130,10 +341,9 @@
 
     form.addEventListener('submit', e => {
       e.preventDefault();
-      
       btn.disabled = true;
       btn.textContent = 'Enviando...';
-      feedback.classList.add('hidden');
+      feedback.className = 'hidden';
 
       const data = {
         nome: form.nome.value,
@@ -144,27 +354,34 @@
 
       fetch(scriptURL, {
         method: 'POST',
-        mode: 'no-cors', // Evita erros de CORS no navegador
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       })
       .then(() => {
         feedback.textContent = '✅ Solicitação enviada com sucesso! Entraremos em contato em breve.';
-        feedback.className = 'text-center text-sm p-3 rounded-lg mt-2 bg-emerald-950/80 border border-emerald-800 text-emerald-400';
+        feedback.className = 'rounded-lg border border-emerald-800 bg-emerald-950/80 p-3 text-center text-sm text-emerald-400';
         form.reset();
         btn.disabled = false;
-        btn.textContent = 'Quero Proteger Minha Empresa';
+        btn.textContent = 'Quero falar com um especialista';
       })
       .catch(error => {
-        console.error('Erro!', error.message);
+        console.error('Erro!', error);
         feedback.textContent = '❌ Ocorreu um erro ao enviar. Tente novamente.';
-        feedback.className = 'text-center text-sm p-3 rounded-lg mt-2 bg-rose-950/80 border border-rose-800 text-rose-400';
+        feedback.className = 'rounded-lg border border-rose-800 bg-rose-950/80 p-3 text-center text-sm text-rose-400';
         btn.disabled = false;
-        btn.textContent = 'Quero Proteger Minha Empresa';
+        btn.textContent = 'Quero falar com um especialista';
       });
     });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
